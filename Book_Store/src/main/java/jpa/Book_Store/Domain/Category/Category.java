@@ -1,6 +1,7 @@
-package jpa.Book_Store.Domain;
+package jpa.Book_Store.Domain.Category;
 
 import jakarta.persistence.*;
+import jpa.Book_Store.Domain.Item.Item;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,9 +18,13 @@ public class Category {
 
     private String name;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "category")
     private List<Item> items = new ArrayList<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
     private Category parent;
+
+    @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
 }

@@ -1,6 +1,7 @@
-package jpa.Book_Store.Domain;
+package jpa.Book_Store.Domain.Delivery;
 
 import jakarta.persistence.*;
+import jpa.Book_Store.Domain.Order.Order;
 import lombok.Getter;
 import lombok.Setter;
 

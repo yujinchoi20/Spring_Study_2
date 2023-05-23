@@ -2,7 +2,7 @@ package jpa.Book_Store.Repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jpa.Book_Store.Domain.Member;
+import jpa.Book_Store.Domain.Member.Member;
 import org.springframework.stereotype.Repository;
 
 @Repository
