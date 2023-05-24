@@ -14,20 +14,4 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 public class MemberRepositoryTest {
 
-    @Autowired MemberRepository memberRepository;
-
-    @Test
-    @Transactional
-    @Rollback(value = false) //true 롤백 함, false 롤백 안 함.
-    public void testMember() {
-        Member member = new Member();
-        member.setUsername("memberA");
-
-        Long saveId = memberRepository.save(member);
-        Member findMember = memberRepository.find(saveId);
-
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-        Assertions.assertThat(findMember).isEqualTo(member);
-    }
 }

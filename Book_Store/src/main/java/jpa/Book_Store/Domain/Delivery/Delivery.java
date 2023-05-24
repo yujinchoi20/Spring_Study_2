@@ -1,6 +1,7 @@
 package jpa.Book_Store.Domain.Delivery;
 
 import jakarta.persistence.*;
+import jpa.Book_Store.Domain.Address;
 import jpa.Book_Store.Domain.Order.Order;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,9 +17,8 @@ public class Delivery {
     @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
     private Order order;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address; //city, street, zipcode를 임베디드 타입으로 선언
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;

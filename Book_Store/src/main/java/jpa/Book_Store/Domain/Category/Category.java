@@ -19,7 +19,7 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    private List<Item> items = new ArrayList<>();
+    private List<Item_Category> item_categories = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
@@ -27,4 +27,10 @@ public class Category {
 
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
+
+    //연관관계 메서드
+    public void addChildCategory(Category child) {
+        this.child.add(child);
+        child.setParent(this);
+    }
 }
