@@ -15,7 +15,7 @@
 
 ---------------------
 
-### Member 엔티티, 레포지토리, 서비스 개발 
+### Member 엔티티, 레포지토리, 서비스 개발 + 테스트 
 
 1. Member 엔티티 
 
@@ -45,5 +45,12 @@
 * validateDuplicateMember(): 중복 회원 검증
 * findMembers(): 전체 회원 조회
 * findOne(): id로 특정 회원 조회 
+
+
+* 생성자 주입: 변경 불가능한 안전한 객체를 생성할 수 있다. @RequiredArgsConstructor 어노테이션을 사용하면 생성자를 직접 작성하지 않아도 된다. 
+
+4. MemberRepositoryTest
+
+* 회원가입, 중복회원체크 
 
 -------------------------
