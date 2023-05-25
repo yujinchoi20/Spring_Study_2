@@ -51,4 +51,19 @@ public class MemberRepositoryTest {
         //then
         fail("예외가 발생해야 한다. ");
     }
+
+    @Test
+    public void 회원_조회() {
+        //given
+        Member member = new Member();
+        member.setName("choi");
+
+        //when
+        memberService.join(member);
+
+        //then
+        Member findMember = memberService.findOne(member.getId());
+        System.out.println("Member = " + findMember.getName());
+    }
+
 }
