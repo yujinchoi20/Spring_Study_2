@@ -1,6 +1,7 @@
 package jpa.Book_Store.Repository;
 
 import jpa.Book_Store.Domain.Item.Book;
+import jpa.Book_Store.Domain.Item.Item;
 import jpa.Book_Store.Service.ItemService;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -38,5 +39,21 @@ public class ItemRepositoryTest {
 
         //then
         Assertions.assertThat(itemRepository.findOne(saveItemId)).isEqualTo(book);
+    }
+
+    @Test
+    @Rollback(value = false)
+    public void 상품_조회() throws Exception {
+        //given
+        Book book = new Book();
+        book.setName("JPA 정복");
+        book.setAuthor("kim");
+
+        //when
+        Long saveId = itemService.saveItem(book);
+
+        //then
+        String bookName = itemService.findOne(saveId).getName();
+        System.out.println("Book Name : " + bookName);
     }
 }

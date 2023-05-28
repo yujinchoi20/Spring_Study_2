@@ -89,7 +89,11 @@ ItemRepository, ItemService를 주입받아 테스트 진행
 
 일단은 상품을 추가하는 테스트만 진행함. 
 
-Book 상품을 생성하고, 이 상품을 등록함. 
+* Book 상품을 생성하고, 이 상품을 등록함. 
 
 ![](img/itemTest.png)
+
+* 추가한 Book 상품을 조회.
+
+![](img/bookFind.png)
 
