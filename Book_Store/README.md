@@ -97,3 +97,9 @@ ItemRepository, ItemService를 주입받아 테스트 진행
 
 ![](img/bookFind.png)
 
+* 추가한 Item 전체 조회.
+
+![](img/allItem.png)
+
+--------------------
+

@@ -2,6 +2,7 @@ package jpa.Book_Store.Repository;
 
 import jpa.Book_Store.Domain.Item.Book;
 import jpa.Book_Store.Domain.Item.Item;
+import jpa.Book_Store.Domain.Item.Movie;
 import jpa.Book_Store.Service.ItemService;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -11,9 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -55,5 +55,32 @@ public class ItemRepositoryTest {
         //then
         String bookName = itemService.findOne(saveId).getName();
         System.out.println("Book Name : " + bookName);
+    }
+
+    @Test
+    @Rollback(value = false)
+    public void 상품_전체_조회() {
+        //given
+        Movie movie = new Movie();
+        movie.setName("너의 이름은");
+        movie.setActor("미츠하");
+        movie.setPrice(15000);
+        movie.setStockQuantity(10);
+
+        Book book = new Book();
+        book.setName("JPA 정복");
+        book.setAuthor("kim");
+        book.setPrice(30000);
+        book.setStockQuantity(100);
+
+        //when
+        itemService.saveItem(movie);
+        itemService.saveItem(book);
+
+        //then
+        List<Item> items = itemService.findItems();
+        for(Item item : items) {
+            System.out.println("ITEM NAME: " + item.getName());
+        }
     }
 }
