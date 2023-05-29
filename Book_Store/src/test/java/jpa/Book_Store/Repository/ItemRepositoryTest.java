@@ -59,7 +59,7 @@ public class ItemRepositoryTest {
 
     @Test
     @Rollback(value = false)
-    public void 상품_전체_조회() {
+    public void 상품_전체_조회() throws Exception{
         //given
         Movie movie = new Movie();
         movie.setName("너의 이름은");

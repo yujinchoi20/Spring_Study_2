@@ -50,7 +50,7 @@ public class OrderService {
     public void cancelOrder(Long orderId) {
         //주문 엔티티 조회
         Order order = orderRepository.findOnd(orderId);
-        order.cancle();
+        order.cancle(); //도메인 모델 패턴
     }
 
 }

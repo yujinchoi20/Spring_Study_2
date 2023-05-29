@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.sound.midi.MetaMessage;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,7 +30,7 @@ public class Order {
     private Delivery delivery; //배송 정보
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate; //주문 시간
 
