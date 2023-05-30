@@ -149,3 +149,16 @@ orderCount = 10 일 경우 예상한 예외가 발생하지 않아 Test 메서�
 
 ----------------------
 
+## 웹 계층 개발 
+
+![](img/web.png) 
+
+![](img/webFunction.png)
+
+1. 홈 화면 레이아웃 
+* HomeController, home.html(fragments - header.html, bodyHeader.html, footer.html)
+* css -> resources/static/css, js 추가 bootstrap에서 다운로드 : 레이아웃 디자인 
+* jumbotron-narrow.css 추가 : 레이아웃 위치 조정 
+
+![](img/homeLayout.png)
+
