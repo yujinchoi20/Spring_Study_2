@@ -1,7 +1,6 @@
 package jpa.Book_Store.Domain.Item;
 
 import jakarta.persistence.*;
-import jpa.Book_Store.Domain.Category.Category;
 import jpa.Book_Store.Domain.Category.Item_Category;
 import jpa.Book_Store.Exception.NotEnoughStockException;
 import lombok.Getter;
