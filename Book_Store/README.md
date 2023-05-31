@@ -192,3 +192,13 @@ orderCount = 10 일 경우 예상한 예외가 발생하지 않아 Test 메서�
 * 이미 존재하는 회원일 경우 -> 오류 발생
 ![](img/duplicate.png)
 
+3. 상품 기능
+   1) 상품 등록 
+   ![](img/itemSave.png)
+   2) 상품 조회
+   ![](img/itemList.png)
+   3) 상품 수정
+   ![](img/itemUpdateQuery.png)
+   
+   ![](img/itemUpdateDB.png)
+   
